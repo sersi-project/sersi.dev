@@ -2,6 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui"],
-  css: ["~/assets/styles.css"],
+  modules: ["@nuxt/ui", '@nuxtjs/color-mode'],
+  css: ["~/assets/css/styles.css"],
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+    classSuffix: '',
+  },
+  ui: {
+    theme: {
+      colors: ['primary', 'accent', 'error', 'warning', 'success']
+    }
+  }
 });
