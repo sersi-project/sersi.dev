@@ -4,8 +4,10 @@
     <ProPlans />
     <USeparator class="my-16" />
     <ProFeatures />
+    <!-- <USeparator class="my-16" /> -->
+    <!-- <ProFAQ />
     <USeparator class="my-16" />
-    <ProFAQ />
+    <Sponsor /> -->
   </div>
 </template>
 

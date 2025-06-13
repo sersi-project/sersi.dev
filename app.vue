@@ -1,12 +1,14 @@
 <template>
   <MotionConfig
     :transition="{
-      duration: 0.5,
+      duration: 0.3,
       ease: 'easeInOut',
     }"
   >
     <NuxtLayout>
-      <NuxtPage />
+      <UApp>
+        <NuxtPage />
+      </UApp>
     </NuxtLayout>
   </MotionConfig>
 </template>

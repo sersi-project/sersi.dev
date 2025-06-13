@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center my-10">
+  <div class="flex flex-col justify-center items-center my-10 py-12 gap-8">
     <p class="text-center text-4xl font-bold w-2/3">
       Supporting the most popular frameworks and libraries
     </p>
@@ -8,75 +8,168 @@
       favourite libraries
     </p>
   </div>
+  <div class="flex justify-center items-center">
   <div
-    class="flex flex-col lg:grid lg:grid-flow-row 2xl:grid-rows-2 grid-cols-2 2xl:grid-cols-3 gap-4"
+    class="grid grid-flow-row-dense grid-cols-5 place-content-center gap-8 w-2/3 mb-36"
   >
-    <UCard
+    <motion.div
       v-for="framework in frameworks"
-      variant="subtle"
       :key="framework.name"
-      class="p-4 border border-gray-200 m-5 shadow-lg hover:"
+      :class="`size-24 flex  items-center justify-center border border-gray-300 rounded-lg inset-shadow-sm ${framework.color}`"
+      :whileHover="{scale: 0.8, rotate: 10,color: 'black', outline: '10px double ' + framework.hoverColor, outlineOffset: '2px', boxShadow: '0 0 0 2px ' + framework.color }"
     >
-      <UIcon :name="framework.icon" :class="`size-8 mb-4 ${framework.color}`" />
-      <p class="text-xl font-bold mb-2 text-highlighted">
-        {{ framework.name }}
-      </p>
-      <p class="text-base">{{ framework.description }}</p>
-    </UCard>
+    <NuxtLink :to="framework.link">
+      <UIcon :name="framework.icon" :class="`size-16`" />
+    </NuxtLink>
+    </motion.div>
   </div>
+</div>
 </template>
 
 <script lang="ts" setup>
 import type { Framework } from '~/types';
+import { motion } from 'motion-v';
 
 const frameworks: Framework[] = [
   {
     name: 'Vue',
-    description:
-      'Vue provides a declarative, component-based programming model that helps you efficiently develop user interfaces of any complexity.',
     icon: 'i-simple-icons-vuedotjs',
     link: 'https://vuejs.org',
-    color: 'bg-green-500',
+    color: 'text-[#42D292]',
+    hoverColor: '#42D292',
   },
   {
     name: 'React',
-    description:
-      'A JavaScript library using reusable components and a virtual DOM for efficient rendering, making it ideal for modern web apps.',
     icon: 'i-simple-icons-react',
     link: 'https://reactjs.org',
-    color: 'bg-blue-500',
+    color: 'text-[#58C4DC]',
+    hoverColor: '#58C4DC',
   },
   {
     name: 'Svelte',
-    description:
-      'A modern JavaScript framework that compiles components into highly efficient, vanilla JavaScript at build time. It offers fast performance and a simple, reactive syntax for building web apps.',
     icon: 'i-simple-icons-svelte',
     link: 'https://svelte.dev',
-    color: 'bg-red-500',
+    color: 'text-[#FF3B30]',
+    hoverColor: '#FF3B30',
   },
   {
     name: 'Tailwind',
-    description:
-      'A utility-first CSS framework for rapidly building custom designs.',
     icon: 'i-simple-icons-tailwindcss',
     link: 'https://tailwindcss.com',
-    color: 'bg-teal',
+    color: 'text-[#00BCFF]',
+    hoverColor: '#00BCFF', 
   },
   {
     name: 'Bootstrap',
-    description:
-      'A CSS framework for building responsive, mobile-first projects on the web.',
     icon: 'i-simple-icons-bootstrap',
     link: 'https://getbootstrap.com',
-    color: 'bg-purple-500',
+    color: 'text-[#7425EF]',
+    hoverColor: '#7425EF',
   },
   {
     name: 'Typescript',
-    description:
-      'A superset of JavaScript that adds static typing for enhanced code quality and developer experience.',
     icon: 'i-simple-icons-typescript',
     link: 'https://www.typescriptlang.org',
-    color: 'bg-blue-500 text-white',
+    color: 'text-[#2563EB]',
+    hoverColor: '#2563EB',
+  },
+  {
+    name: 'Node',
+    icon: 'i-grommet-icons-node',
+    link: 'https://nodejs.org',
+    color: 'text-[#8CC84A]',
+    hoverColor: '#8CC84A',
+  },
+  {
+    name: 'Express',
+    icon: 'i-simple-icons-express',
+    link: 'https://expressjs.com',
+    color: 'text-black',
+    hoverColor: 'black',
+  },
+  {
+    name: 'MongoDB',
+    icon: 'i-simple-icons-mongodb',
+    link: 'https://www.mongodb.com',
+    color: 'text-[#12E660]',
+    hoverColor: '#12E660',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: 'i-logos-postgresql',
+    link: 'https://www.postgresql.org',
+    color: 'text-[#336791]',
+    hoverColor: '#336791',
+  },
+  {
+    name: 'Docker',
+    icon: 'i-simple-icons-docker',
+    link: 'https://www.docker.com',
+    color: 'text-[#2396ED]',
+    hoverColor: '#2396ED',
+  },
+  {
+    name: 'GitHub',
+    icon: 'i-simple-icons-github',
+    link: 'https://github.com',
+    color: 'text-black',
+    hoverColor: 'black',
+  },
+  {
+    name: 'GitLab',
+    icon: 'i-simple-icons-gitlab',
+    link: 'https://gitlab.com',
+    color: 'text-[#E34024]',
+    hoverColor: '#E34024',
+  },
+  {
+    name: 'Gin',
+    icon: 'i-logos-gin',
+    link: 'https://github.com/gin-gonic/gin',
+    color: 'text-[#2563EB]',
+    hoverColor: '#2563EB',
+  },
+  {
+    name: 'Prisma',
+    icon: 'i-simple-icons-prisma',
+    link: 'https://prisma.io',
+    color: 'text-black',
+    hoverColor: 'black',
+  },
+  {
+    name: 'Prometheus',
+    icon: 'i-simple-icons-prometheus',
+    link: 'https://github.com/prometheus/prometheus',
+    color: 'text-red-500',
+    hoverColor: 'red',
+  },
+  {
+    name: 'Go',
+    icon: 'i-simple-icons-go',
+    link: 'https://golang.org',
+    color: 'text-[#008ECF]',
+    hoverColor: '#008ECF',
+  },
+  {
+    name: 'python',
+    icon: 'i-logos-python',
+    link: 'https://www.python.org',
+    color: 'text-[#2563EB]',
+    hoverColor: '#2563EB',
+  },
+  {
+    name: 'FastAPI',
+    icon: 'i-simple-icons-fastapi',
+    link: 'https://fastapi.tiangolo.com',
+    color: 'text-[#009485]',
+    hoverColor: '#009485',
+  },
+  {
+    name: 'Fastify',
+    icon: 'i-simple-icons-fastify',
+    link: 'https://fastify.io',
+    color: 'text-black',
+    hoverColor: 'black',
   },
 ];
 </script>

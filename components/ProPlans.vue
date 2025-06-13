@@ -54,15 +54,34 @@
 
       <template #footer>
         <UButton
+        v-if="plan.name === 'Core'"
           block
           :color="plan.call_to_action_color"
           :variant="plan.call_to_action_variant"
           :label="plan.call_to_action"
           class="py-3"
-          :ui="{
-            label: 'text-lg',
-          }"
+          to="/"
         />
+
+        <UModal
+          title="Join Waitlist"
+          v-else
+        >
+          <UButton
+            block
+            :color="plan.call_to_action_color"
+            :variant="plan.call_to_action_variant"
+            :label="plan.call_to_action"
+            class="py-3"
+          />
+          <template #content>
+            <div class="py-18 flex flex-col items-center gap-8 w-full">
+            <div v-if="plan.name === 'Pro'" class="flex items-center gap-2 font-bold text-4xl"><UIcon name="i-hugeicons-star" class="size-8 text-primary" />SERSI <code class="text-primary border border-dashed p-2">Pro</code></div>
+            <div v-if="plan.name === 'Teams'" class="flex items-center gap-2 font-bold text-4xl"><UIcon name="i-hugeicons-stars" class="size-8 text-primary" />SERSI <code class="text-primary border border-dashed p-2">Teams</code></div>   
+            <WaitingListForm />
+            </div>
+          </template>
+        </UModal>
       </template>
     </UCard>
   </div>
@@ -70,6 +89,9 @@
 
 <script lang="ts" setup>
 import type { Plan } from '~/types';
+import { ref } from 'vue';
+import WaitingListForm from './WaitingListForm.vue';
+
 
 const plans: Plan[] = [
   {
@@ -88,27 +110,46 @@ const plans: Plan[] = [
       'New features',
       'Community support',
       'Popular frameworks',
-      'Basic IaC',
+      'Fullstack IaC',
     ],
   },
   {
     id: 2,
     name_color: 'text-primary',
     name: 'Pro',
-    icon: 'i-hugeicons-stars',
+    icon: 'i-hugeicons-star',
     description:
       'The best plan for streamlining freelance projects and getting paid faster.',
-    price: '$150',
-    alt_price: '$15',
+    price: '$100',
+    alt_price: '$10',
     call_to_action: 'Join Waitlist',
     call_to_action_variant: 'solid',
     call_to_action_color: 'primary',
     featureList: [
       'Everything in Core',
-      'Advanced IaC',
+      'Custom Hooks',
       'Scaffold store',
       'CI/CD workflows',
-      'Cloud integration',
+    ],
+  },
+  {
+    id: 3,
+    name_color: 'text-primary',
+    name: 'Teams',
+    icon: 'i-hugeicons-stars',
+    description:
+      'The ultimate plan for team projects and super specific use cases.',
+    price: '$600',
+    alt_price: '$60',
+    call_to_action: 'Join Waitlist',
+    call_to_action_variant: 'solid',
+    call_to_action_color: 'primary',
+    featureList: [
+      'Everything in Pro',
+      'Shared Hooks & Scaffold store',
+      'Priority support',
+      'Custom workflows',
+      '5 free seats ($5/month per additional seat)',
     ],
   },
 ];
