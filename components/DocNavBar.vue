@@ -1,57 +1,48 @@
 <template>
-    <UNavigationMenu :items="items" orientation="vertical" expa :ui="{
-        link: 'text-xl',
-        childLink: 'text-base'
-    }" />
+  <UNavigationMenu
+    :items="items"
+    orientation="vertical"
+    expa
+    :ui="{
+      link: 'text-xl',
+      childLink: 'text-base',
+    }"
+  />
 </template>
 
 <script lang="ts" setup>
-import type { NavigationMenuItem } from '@nuxt/ui'
+import type { NavigationMenuItem } from '@nuxt/ui';
 const items = ref<NavigationMenuItem[]>([
   {
-    label: "Guide",
+    label: 'Guide',
     type: 'label',
-  },    
+  },
   {
-    label: "Getting Started",
-    href: "/docs/getting-started",
+    label: 'Getting Started',
+    href: '/docs',
+  },
+  {
+    label: 'Core',
     defaultOpen: true,
     children: [
       {
-        label: "Installation",
-        href: "/docs/getting-started/installation",
+        label: 'Installation',
+        href: '/docs/installation',
       },
       {
-        label: "Configuration",
-        href: "/docs/getting-started/configuration",
-    },
-      
-    ]
-  },
-    
-  {
-    label: "Usage",
-    href: "/docs/usage",
-    defaultOpen: true,
-    children: [
-      {
-        label: "Commands",
-        href: "/docs/usage/commands",
+        label: 'Usage',
+        href: '/docs/usage',
       },
-      {
-        label: "File Structure",
-        href: "/docs/usage/configuration",
-      },
-    ]
+    ],
   },
   {
-    label: "Contributing",
-    href: "/docs/contributing",
+    label: 'Contributing',
+    href: '/docs/contributing',
   },
   {
-    label: "About",
-    href: "/docs/about",
-  }
+    label: 'Pro',
+    class: 'text-primary border border-primary border-dashed ',
+    href: '/docs/pro',
+  },
 ]);
 </script>
-

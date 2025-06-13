@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center my-10">
+  <div class="flex flex-col justify-center items-center my-10 gap-8">
     <p class="text-center text-4xl font-bold">Join the community!</p>
     <p class="text-center text-xl w-2/3">
       We value your feedback and contributions. Join our community to get help,

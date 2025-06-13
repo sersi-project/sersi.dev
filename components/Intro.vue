@@ -36,7 +36,7 @@
         duration: 0.5,
         scale: { type: 'spring', visualDuration: 0.5, bounce: 0.5 },
       }"
-      class="flex flex-col w-[675px] border-4 border-gray-200 shadow-lg h-[46vh] my-10 rounded-lg items-center"
+      class="flex flex-col w-[975px] border-4 border-gray-200 shadow-lg h-[64vh] my-10 rounded-lg items-center"
     >
       <div class="h-8 w-full bg-gray-200 flex items-center px-3 gap-2">
         <div class="rounded-full size-4 bg-green-500"></div>
@@ -47,7 +47,7 @@
         <img
           src="@/assets/img/sersi-demo.gif"
           alt="sersi-intro"
-          class="h-96 w-full object-contain object-left"
+          class="w-full object-contain object-left object-bottom"
         />
       </div>
     </motion.div>

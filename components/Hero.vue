@@ -10,6 +10,7 @@
   >
     <div class="flex flex-col items-center lg:px-16">
       <div class="flex items-center gap-2 text-sm">
+        <NuxtLink to="https://github.com/sersi-project/sersi/releases/tag/v0.0.0-alpha"><div class="text-center p-1 px-2 border border-gray-700 rounded-full text-xs bg-gray-300 text-gray-700">v0.0.0-alpha</div></NuxtLink>    
         <code
           >powered by
           <NuxtLink to="https://vitejs.dev/" target="_blank" class="underline"
@@ -17,6 +18,7 @@
           ></code
         >
         <UIcon name="i-devicon-vitejs" class="size-4" />
+        
       </div>
       <h1
         class="text-[3.5rem] lg:text-[4rem] xl:text-[5.5rem] font-bold tracking-tight text-center leading-tight"
@@ -59,11 +61,15 @@
       <div
         class="border border-gray-200 p-5 px-8 w-auto flex justify-center items-center gap-10 rounded-sm mt-18 shadow-lg"
       >
-        <code>npx sersi create</code>
+        <code>npx sersi<span class="text-purplish">@alpha</span> create</code>
         <UButton
           icon="i-lucide-copy"
           @click="handleCopy"
           :color="copied ? 'neutral' : 'primary'"
+          :disabled="diabled"
+          :ui="{
+            base: 'hover:cursor-pointer',
+          }"
         />
       </div>
     </div>
@@ -74,11 +80,25 @@
 import { motion } from 'motion-v';
 import { useClipboard } from '@vueuse/core';
 const { copy } = useClipboard();
+const toast = useToast();
+
+const diabled = ref(false);
 const copied = ref(false);
 const mode = useColorMode();
 
 const handleCopy = () => {
-  copy('npx sersi create');
+  copy('npx sersi@alpha create');
   copied.value = true;
+  toast({
+    title: 'Copied to clipboard',
+    description: 'npx sersi@alpha create',
+    color: 'success',
+    position: 'top-right',
+    duration: 2000,
+  });
+  diabled.value = true;
+  setTimeout(() => {
+    diabled.value = false;
+  }, 2000);
 };
 </script>

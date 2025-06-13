@@ -17,7 +17,7 @@
       />
       <UButton icon="i-lucide-menu" class="xl:hidden" />
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4">   
       <UInput
         v-model="search_input"
         icon="i-lucide-search"
