@@ -1,16 +1,18 @@
 <template>
-  <div class="flex flex-col justify-center items-center my-10 py-12 gap-8">
-    <p class="text-center text-4xl font-bold w-2/3">
+  <div class="flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center my-10 py-12 gap-8 md:text-center md:w-2/3">
+    <p class="text-4xl font-bold">
       Supporting the most popular frameworks and libraries
     </p>
-    <p class="text-center text-xl w-2/3">
+    <p class="text-xl">
       All frameworks are powered by vite, and are ready to use with your
       favourite libraries
     </p>
   </div>
+  </div>
   <div class="flex justify-center items-center">
   <div
-    class="grid grid-flow-row-dense grid-cols-5 place-content-center gap-8 w-2/3 mb-36"
+    class="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-content-center gap-8 lg:w-2/3 mb-36"
   >
     <motion.div
       v-for="framework in frameworks"
