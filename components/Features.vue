@@ -1,32 +1,32 @@
 <template>
-  <div class="flex justify-center h-[235vh] my-32">
-    <div class="w-1/2 h-[148vh] text-left">
-      <div class="h-[56vh] flex flex-col justify-center items-start gap-8">
-        <div class="flex items-center gap-2 text-xl text-primary"><UIcon name="i-lucide-code" class="size-5" />Code infrastructure</div>
-        <p class="text-4xl font-bold">Comprehensive Scaffold-as-Code</p>
-        <p class="text-xl text-gray-500 w-4/5">
+  <div class="flex justify-center md:h-[235vh] my-12 md:my-32">
+    <div class="md:w-1/2 md:h-[148vh] text-left">
+      <div class="h-[56vh] flex flex-col justify-center items-start gap-8 mb-16">
+        <div class="flex items-center gap-2 text-xl md:text-lg lg:text-xl text-primary"><UIcon name="i-lucide-code" class="size-5" />Code infrastructure</div>
+        <p class="text-4xl md:text-2xl lg:text-4xl font-bold">Comprehensive Scaffold-as-Code</p>
+        <p class="text-xl md:text-lg lg:text-xl text-gray-500 md:w-4/5">
           Effortlessly generate complex project structures with a single YAML configuration. 
           Define everything from file organization to dependencies, making project setup 
           consistent and automated across your team.
         </p>
         <DependencyLabel command="build -f sersi.yaml" />
       </div>
-      <div class="h-[26vh]"></div>
-      <div class="h-[60vh] flex flex-col justify-center items-start gap-8">
-        <div class="flex justify-center items-center gap-2 text-xl text-primary"><UIcon name="i-lucide-file" class="size-5" />File management</div>
-        <p class="text-4xl font-bold">Standardised File Structure</p>
-        <p class="text-xl text-gray-500 w-4/5">
+      <div class="h-12 md:h-[26vh]"></div>
+      <div class="h-[60vh] flex flex-col justify-center items-start gap-8 my-16">
+        <div class="flex justify-center items-center gap-2 text-xl md:text-lg lg:text-xl text-primary"><UIcon name="i-lucide-file" class="size-5" />File management</div>
+        <p class="text-4xl md:text-2xl lg:text-4xl font-bold">Standardised File Structure</p>
+        <p class="text-xl md:text-lg lg:text-xl text-gray-500 md:w-4/5">
           Maintain consistent project organization with predefined templates and conventions. 
           Streamline development with a clear, predictable structure that makes it easy for 
           new team members to get started and maintain code quality across your projects.
         </p>
       </div>
-      <div class="h-[26vh]"></div>
-      <div class="h-[60vh] ">
-        <div class="border border-primary border-dashed flex flex-col justify-center items-start gap-8 p-8 py-12 mr-12">
-          <div class="flex justify-center items-center gap-2 text-xl text-primary"><UIcon name="i-hugeicons-stars" class="size-5" />Pro Features</div>
-        <p class="text-4xl font-bold">Fully Customizable Scaffolds</p>
-        <p class="text-xl text-gray-500 w-4/5">
+      <div class="h-12 md:h-[26vh]"></div>
+      <div class="h-[60vh] mb-36">
+        <div class="border border-primary border-dashed flex flex-col justify-center items-start gap-8 p-3 md:p-8 py-12 md:mr-12">
+          <div class="flex justify-center items-center gap-2 text-xl md:text-lg lg:text-xl text-primary"><UIcon name="i-hugeicons-stars" class="size-5" />Pro Features</div>
+        <p class="text-4xl md:text-2xl lg:text-4xl font-bold">Fully Customizable Scaffolds</p>
+        <p class="text-xl md:text-lg lg:text-xl text-gray-500 md:w-4/5">
           Join Pro to unlock customizability - 
           Add custom hooks for pre and post installation scripts that you can run to install extra dependencies, seed databse or initialise third party integrations.
         </p>
@@ -44,7 +44,7 @@
         ease: 'easeInOut'
       }"
       :whileHover="{ scale: 1.02 }"
-      class="w-[500px] h-[56vh] border border-gray-200 shadow-lg rounded-lg sticky top-32 transition-discrete ease-in duration-700"
+      class="hidden md:block md:w-[300px] lg:w-[500px] md:h-[36vh] lg:h-[56vh] border border-gray-200 shadow-lg rounded-lg sticky top-32 md:ml-6 lg:ml-0"
     >
       <motion.div v-if="scrollValue < 0.40"
       key="yaml"
