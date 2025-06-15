@@ -14,7 +14,7 @@
         </p>
       </template>
       <div class="flex flex-col h-[32vh]">
-        <p class="text-gray-500 text-center">
+        <p class="text-gray-500 text-center dark:text-white">
           {{ plan.description }}
         </p>
 
@@ -43,7 +43,7 @@
             <li
               v-for="feature in plan.featureList"
               :key="feature"
-              class="flex gap-2 items-center text-gray-500"
+              class="flex gap-2 items-center text-gray-500 dark:text-white"
             >
               <UIcon name="i-gg-check-o" class="text-primary" />
               <p>{{ feature }}</p>

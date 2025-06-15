@@ -16,7 +16,7 @@
       v-for="framework in frameworks"
       :key="framework.name"
       :class="`size-24 flex  items-center justify-center border border-gray-300 rounded-lg inset-shadow-sm ${framework.color}`"
-      :whileHover="{scale: 0.8, rotate: 10,color: 'black', outline: '10px double ' + framework.hoverColor, outlineOffset: '2px', boxShadow: '0 0 0 2px ' + framework.color }"
+      :whileHover="{scale: 0.8, rotate: 10, color: `${mode.value === 'dark' ? 'white' : 'black'}` , outline: '10px double ' + framework.hoverColor, outlineOffset: '2px', boxShadow: '0 0 0 2px ' + framework.color }"
     >
     <NuxtLink :to="framework.link">
       <UIcon :name="framework.icon" :class="`size-16`" />
@@ -29,6 +29,13 @@
 <script lang="ts" setup>
 import type { Framework } from '~/types';
 import { motion } from 'motion-v';
+
+const mode = useColorMode();
+
+const hoverColor = ref('black');
+const darkmodeHoverColor = computed(() => {
+  hoverColor.value = mode.value === 'dark' ? 'white' : 'black';
+});
 
 const frameworks: Framework[] = [
   {
@@ -84,8 +91,8 @@ const frameworks: Framework[] = [
     name: 'Express',
     icon: 'i-simple-icons-express',
     link: 'https://expressjs.com',
-    color: 'text-black',
-    hoverColor: 'black',
+    color: 'text-black dark:text-white',
+    hoverColor: `${darkmodeHoverColor.value}`,
   },
   {
     name: 'MongoDB',
@@ -112,8 +119,8 @@ const frameworks: Framework[] = [
     name: 'GitHub',
     icon: 'i-simple-icons-github',
     link: 'https://github.com',
-    color: 'text-black',
-    hoverColor: 'black',
+    color: 'text-black dark:text-white',
+    hoverColor: `${darkmodeHoverColor.value}`,
   },
   {
     name: 'GitLab',
@@ -133,8 +140,8 @@ const frameworks: Framework[] = [
     name: 'Prisma',
     icon: 'i-simple-icons-prisma',
     link: 'https://prisma.io',
-    color: 'text-black',
-    hoverColor: 'black',
+    color: 'text-black dark:text-white',
+    hoverColor: `${darkmodeHoverColor.value}`,
   },
   {
     name: 'Prometheus',
@@ -168,8 +175,8 @@ const frameworks: Framework[] = [
     name: 'Fastify',
     icon: 'i-simple-icons-fastify',
     link: 'https://fastify.io',
-    color: 'text-black',
-    hoverColor: 'black',
+    color: 'text-black dark:text-white',
+    hoverColor: `${darkmodeHoverColor.value}`,
   },
 ];
 </script>
