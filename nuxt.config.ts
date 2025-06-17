@@ -1,52 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   modules: [
-    '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
-    '@nuxt/fonts',
     '@nuxtjs/seo',
+    '@nuxt/icon',
+    '@nuxt/fonts',
   ],
   css: ['~/assets/css/styles.css'],
   colorMode: {
     preference: 'system',
     fallback: 'light',
     classSuffix: '',
-    storage: 'localStorage',
-    storageKey: 'sersi-color-mode', 
   },
-  content: {
-    build: {
-      markdown: {
-        highlight: {
-          theme: {
-            dark: 'github-dark',
-            light: 'github-light',
-            default: 'github-light',
-            sepia: 'monokai',
-          },
-        },
-        toc: {
-          depth: 3,
-        },
-      },
-    },
-  },
-  fonts:{
-    defaults:{
-      preload:true,
-      styles:['normal', 'italic'],
-    },
-    families:[
+  fonts: {
+    families: [
       {
-        name:'Atkinson Hyperlegible',
-        provider:'bunny',
-        styles:['normal', 'italic'],
-      }
-    ]
+        name: 'Ubuntu Mono Sans',
+        provider: 'google',
+        fallbacks: ['sans-serif'],
+      },
+    ],
   },
   runtimeConfig: {
     public: {

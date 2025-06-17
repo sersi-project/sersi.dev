@@ -1,9 +1,34 @@
 @import "tailwindcss";
-@import "@nuxt/ui";
 
-@plugin "@tailwindcss/typography";
+@theme{
+    --font-display: 'Ubuntu Mono', 'sans-serif';
+    --color-primary: #00FF95;
+    --color-accent: #FF04C9;
+}
 
-@theme static {
-  --color-teal: #33e6e6;
-  --color-purplish: #cd24cd;
+@layer base{
+    h1{
+        @apply text-6xl font-bold;
+    }
+    h2{
+        @apply text-4xl font-bold;
+    }
+    h3{
+        @apply text-3xl font-bold;
+    }
+    p{
+        @apply text-lg text-gray-300
+    }
+}
+
+.s-container{
+    @apply container mx-auto px-2 md:px-12;
+}
+
+.hover-outline:hover{
+    @apply outline-2 outline-black ;
+}
+
+.hover-scale:hover{
+    @apply scale-110 transition duration-500 ease-in-out;
 }
