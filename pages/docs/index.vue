@@ -14,8 +14,4 @@ useSeoMeta({
   title: docs.value?.title,
   description: docs.value?.description,
 });
-
-definePageMeta({
-  layout: 'docs',
-});
 </script>
