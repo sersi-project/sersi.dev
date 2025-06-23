@@ -1,13 +1,11 @@
 <template>
-  <div class="font-display overflow-x-hidden dark:bg-slate-950">
-    <Header />
+  <div class="font-display overflow-x-hidden bg-white dark:bg-slate-950">
+    <AppHeader />
     <Terminal>
       <slot />
     </Terminal>
-    <Footer />
+    <AppFooter />
   </div>
 </template>
 
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>

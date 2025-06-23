@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
@@ -10,12 +11,28 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/icon',
     '@nuxt/fonts',
+    '@nuxt/ui',
   ],
   css: ['~/assets/css/styles.css'],
   colorMode: {
     preference: 'system',
-    fallback: 'light',
+    fallback: 'dark',
     classSuffix: '',
+  },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['bash', 'yaml'],
+          theme: {
+            default: 'github-dark',
+          },
+        },
+        toc: {
+          depth: 3,
+        },
+      },
+    },
   },
   fonts: {
     families: [
@@ -29,7 +46,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       supabaseUrl: process.env.SUPABASE_URL,
-      supabaseAnonKey: process.env.SUPABASE_ANON_KEY
-    }
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    },
   },
 });
