@@ -14,17 +14,19 @@ useHead({
 </script>
 
 <template>
-  <main class="pt-10">
-    <section class="flex justify-between w-[54rem]">
+  <main class="pt-5 lg:pt-10">
+    <section
+      class="flex flex-wrap flex-col space-y-4 md:flex-row md:space-x-36 md:space-y-0 lg:space-x-0 lg:justify-between w-[50rem]"
+    >
       <TerminalDirectoryBranch
         directory="~/get-started/with/sersi"
         branch="main"
-        className="w-full"
-        width="w-84"
+        className="lg:w-full"
+        width="w-64 lg:w-84"
       />
       <TerminalCodeButton prefix="npx" command="sersi@latest create" />
     </section>
-    <section class="min-w-md max-w-[70vw] mt-16 space-x-8">
+    <section class="min-w-md max-w-[70vw] mt-12 space-x-8">
       <p class="text-title text-white">Scaffold Your Projects in Record Time</p>
       <p class="mt-5">
         With sersi, you can generate a project with your favourite framework,
@@ -34,20 +36,22 @@ useHead({
     </section>
     <section class="min-w-md max-w-[70vw] mt-16 space-x-8">
       <p class="text-title text-primary">Code Infrastructure</p>
-      <p class="mt-5">
+      <p class="mt-3 xl:mt-5 text-wrap">
         Define everything from file organization to dependencies, making project
         setup consistent and automated across your team.
       </p>
       <div class="flex">
-        <div class="flex h-36 p-6 ml-10">
+        <div class="hidden md:flex h-64 p-6 ml-10">
           <img src="~/assets/svg/tree.svg" alt="Tree" class="h-full w-full" />
         </div>
-        <div class="flex flex-col justify-center space-y-2 mt-8">
+        <div
+          class="flex flex-col justify-center space-y-2 lg:space-y-4 xl:space-y-14 mt-8"
+        >
           <p>
             Effortlessly generate complex project structures with a single YAML
             configuration.
           </p>
-          <div class="w-4/5">
+          <div class="w-full md:w-4/5 mt-2">
             <TerminalCodeButton
               prefix="npx"
               command="sersi@latest build -f sersi.yaml"
@@ -64,14 +68,14 @@ useHead({
       </p>
       <div class="flex flex-col">
         <div class="flex">
-          <div class="flex h-48 p-6 ml-24">
+          <div class="hidden md:flex h-72 p-6 ml-10 xl:ml-24">
             <img
               src="~/assets/svg/tree-2.svg"
               alt="Tree"
               class="h-full w-full"
             />
           </div>
-          <div class="flex flex-col justify-center space-y-2 mt-8 pb-9">
+          <div class="flex flex-col justify-center space-y-0 lg:mt-0 pb-6">
             <p>
               Streamline development with a clear, predictable structure that
               makes it easy for new team members to get started and maintain
@@ -79,10 +83,10 @@ useHead({
             </p>
           </div>
         </div>
-        <div class="w-1/2">
+        <div class="flex md:block w-full md:w-1/2">
           <UModal
             :title="`File Structure`"
-            :description="`Sample app that was made using react and tailwindcss, with a node typescript backend written in express.`"
+            :description="`Sample app that was made using vue and tailwindcss, with a node typescript backend written in express.`"
             :ui="{
               body: 'bg-slate-900 font-display font-display',
               title: 'font-display',
@@ -95,7 +99,7 @@ useHead({
           >
             <UButton
               :ui="{
-                base: 'text-2xl',
+                base: 'text-base md:text-2xl ',
               }"
               class="text-white hover-outline hover-scale bg-accent/50 hover:bg-accent rounded-2xl px-6 py-2 mt-4"
             >
@@ -103,7 +107,7 @@ useHead({
             </UButton>
             <template #body>
               <div class="h-[60vh] overflow-y-scroll">
-                <FolderTree />
+                <AppFolderTree />
               </div>
             </template>
           </UModal>

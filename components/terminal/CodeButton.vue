@@ -11,11 +11,13 @@
     }"
   >
     <button
-      class="bg-white/20 px-3 py-1 rounded-sm inline-flex"
+      class="bg-white/20 px-3 py-1 rounded-sm flex w-64 md:w-auto items-center justify-center"
       @click="handleCopy"
     >
       <p class="text-subtitle">
-        <span class="text-[#F39999] mr-4">{{ prefix }}</span> {{ command }}
+        <span class="text-primary mr-4">:$</span>
+        <span class="text-[#F39999] mr-4">{{ prefix }}</span>
+        {{ command }}
       </p>
     </button>
   </UTooltip>
