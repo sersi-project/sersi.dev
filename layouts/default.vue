@@ -1,9 +1,11 @@
 <template>
-  <div class="font-display overflow-x-hidden bg-white dark:bg-slate-950">
+  <div
+    class="font-display overflow-x-hidden overflow-y-hidden bg-white dark:bg-slate-950"
+  >
     <AppHeader />
-    <Terminal>
+    <TerminalMain>
       <slot />
-    </Terminal>
+    </TerminalMain>
     <AppFooter />
   </div>
 </template>

@@ -6,22 +6,31 @@
       <span class="flex items-center mx-8 md:mx-24 h-16">
         <button
           @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden"
+          class="lg:hidden"
           :class="
             mobileMenuOpen
               ? 'bg-primary rounded-l-full flex items-center justify-center size-12 mr-0'
               : 'flex items-center justify-center size-12'
           "
         >
-          <Icon name="gala:menu-left" size="24" class="text-gray-400" />
+          <Icon
+            v-if="!mobileMenuOpen"
+            name="gala:menu-left"
+            size="24"
+            class="text-gray-400"
+          />
+          <Icon
+            v-else
+            name="ic:round-close"
+            size="36"
+            class="text-black size-10"
+          />
         </button>
-        <Icon
-          name="gala:menu-left"
-          size="32"
-          class="text-gray-400 hidden md:block mr-16"
-        />
+        <div class="hidden lg:block mr-10">
+          <Icon name="gala:menu-left" size="30" class="text-gray-400" />
+        </div>
         <ul
-          class="md:flex items-center justify-center h-full list-none space-y-0 mb-0"
+          class="hidden lg:flex items-center justify-center h-full list-none space-y-0 mb-0"
         >
           <li
             v-for="item in navItems"
@@ -46,7 +55,7 @@
         <div class="relative">
           <div
             v-if="mobileMenuOpen"
-            class="z-20 flex items-center space-x-6 bg-primary px-5 py-2 text-black h-12"
+            class="z-20 flex items-center space-x-6 md:space-x-12 bg-primary px-5 py-2 text-black h-12 font-bold"
           >
             <NuxtLink
               v-for="item in navItems"
@@ -65,9 +74,14 @@
         </div>
       </span>
     </nav>
-    <NuxtLink to="/help" class="hidden md:block"
+    <NuxtLink to="/help" class="hidden lg:block"
       ><button
-        class="text-lg text-orange-400 border-2 rounded-full px-6 py-1 mr-12 hover:text-orange-200 hover:border-orange-200"
+        :class="
+          helpSelected
+            ? 'text-lg text-black bg-amber-600 border-2 rounded-full px-6 py-1 mr-12 hover:text-orange-200 hover:border-orange-200'
+            : 'text-lg text-orange-400 border-2 rounded-full px-6 py-1 mr-12 hover:text-orange-200 hover:border-orange-200'
+        "
+        @click="helpSelected = true"
       >
         help
       </button></NuxtLink
@@ -80,15 +94,22 @@ import { ref } from 'vue';
 
 const selectedId = ref(1);
 const mobileMenuOpen = ref(false);
+const helpSelected = ref(false);
 
 const route = useRoute();
 
 if (route.path === '/') {
   selectedId.value = 1;
+  helpSelected.value = false;
 } else if (route.path === '/docs') {
   selectedId.value = 2;
+  helpSelected.value = false;
 } else if (route.path === '/pro') {
   selectedId.value = 3;
+  helpSelected.value = false;
+} else if (route.path === '/help') {
+  helpSelected.value = true;
+  selectedId.value = 0;
 }
 
 const selectedClass = 'bg-white/20 border-b-5 border-primary';

@@ -46,7 +46,7 @@ npx sersi@latest
 
 ### Option 4: Download Prebuilt Binary (Windows, macOS, Linux)
 
-1. Visit the [Releases](https://github.com/sersi-project/sersi/releases) page
+1. Visit the **[RELEASES](https://github.com/sersi-project/sersi/releases)** page
 2. Download the latest binary for your platform
 
 - Windows: `sersi-windows-amd64/sersi.exe`

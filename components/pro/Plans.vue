@@ -1,9 +1,9 @@
 <template>
-  <div class="my-10 pr-32">
+  <div class="my-10 lg:pr-24 xl:pr-32">
     <p
-      class="text-primary text-center text-subtitle bg-white/50 p-4 w-42 flex flex-nowrap"
+      class="text-primary text-center text-subtitle bg-white/20 p-2 lg:p-4 w-32 lg:w-42 flex flex-nowrap"
     >
-      {{ plan.name }}
+      Sersi {{ plan.name }}
     </p>
     <p>{{ plan.description }}</p>
     <div class="flex my-10 justify-between">
@@ -46,11 +46,13 @@
             >
               <p>Already on the waitlist?</p>
               <div class="flex items-center gap-2">
-                <NuxtLink to="/login" class="text-primary">
+                <NuxtLink
+                  to="https://discord.gg/EhZfkG4xkP"
+                  class="text-primary"
+                >
                   Join our community
                 </NuxtLink>
                 <UIcon name="i-simple-icons-discord" class="text-purple-500" />
-                <UIcon name="i-simple-icons-reddit" class="text-red-500" />
               </div>
             </div>
           </template>
