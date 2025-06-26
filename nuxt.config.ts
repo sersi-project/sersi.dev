@@ -2,8 +2,6 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
   modules: [
     '@nuxtjs/color-mode',
     '@nuxt/content',
@@ -14,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/eslint',
   ],
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'Sersi — Your Stack, Your Rules. CLI for Rapid App Scaffolding',
@@ -40,10 +39,17 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    },
+  },
+  compatibilityDate: '2025-05-15',
   eslint: {
     config: {
       stylistic: {
-        indent: 'tab',
+        indent: 2,
         semi: true,
         quotes: 'single',
       },
@@ -60,12 +66,6 @@ export default defineNuxtConfig({
   },
   robots: {
     blockNonSeoBots: true,
-  },
-  runtimeConfig: {
-    public: {
-      supabaseUrl: process.env.SUPABASE_URL,
-      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
-    },
   },
   seo: {
     meta: {
@@ -84,15 +84,5 @@ export default defineNuxtConfig({
       twitterImage: '/social-preview.png',
       twitterSite: '@sersi_dev',
     },
-  },
-  site: {
-    url: 'https://sersi.dev',
-    name: 'Sersi',
-    description:
-      'Sersi is an open-source CLI to generate customizable full-stack apps using your favorite tools like React, FastAPI, Postgresql, Tailwind and more!',
-    defaultLocale: 'en_US',
-    language: 'en',
-    timezone: 'UTC',
-    format: 'en-US',
   },
 });

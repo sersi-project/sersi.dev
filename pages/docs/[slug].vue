@@ -1,6 +1,12 @@
 <template>
-  <ContentRenderer class="prose min-w-64" v-if="page" :value="page" />
-  <div v-else>No docs found</div>
+  <ContentRenderer
+    v-if="page"
+    class="prose min-w-64"
+    :value="page"
+  />
+  <div v-else>
+    No docs found
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -10,13 +10,18 @@ import { TerminalDirectoryBranch } from '#components';
       <TerminalDirectoryBranch
         directory="~/get-started/with/sersi"
         branch="main"
-        className="lg:w-full"
+        class-name="lg:w-full"
         width="w-64 lg:w-84"
       />
-      <TerminalCodeButton prefix="npx" command="sersi@latest create" />
+      <TerminalCodeButton
+        prefix="npx"
+        command="sersi@latest create"
+      />
     </section>
     <section class="min-w-md max-w-[70vw] mt-12 space-x-8">
-      <p class="text-title text-white">Scaffold Your Projects in Record Time</p>
+      <p class="text-title text-white">
+        Scaffold Your Projects in Record Time
+      </p>
       <p class="mt-5">
         With sersi, you can generate a project with your favourite framework,
         alongside your most used libraries and utilities. Gone are the days of
@@ -24,14 +29,20 @@ import { TerminalDirectoryBranch } from '#components';
       </p>
     </section>
     <section class="min-w-md max-w-[70vw] mt-16 space-x-8">
-      <p class="text-title text-primary">Code Infrastructure</p>
+      <p class="text-title text-primary">
+        Code Infrastructure
+      </p>
       <p class="mt-3 xl:mt-5 text-wrap">
         Define everything from file organization to dependencies, making project
         setup consistent and automated across your team.
       </p>
       <div class="flex">
         <div class="hidden md:flex h-64 p-6 ml-10">
-          <img src="~/assets/svg/tree.svg" alt="Tree" class="h-full w-full" />
+          <img
+            src="~/assets/svg/tree.svg"
+            alt="Tree"
+            class="h-full w-full"
+          >
         </div>
         <div
           class="flex flex-col justify-center space-y-2 lg:space-y-4 xl:space-y-14 mt-8"
@@ -50,7 +61,9 @@ import { TerminalDirectoryBranch } from '#components';
       </div>
     </section>
     <section class="min-w-md max-w-[70vw] mt-8 space-x-8">
-      <p class="text-title text-primary">Standardised File Structure</p>
+      <p class="text-title text-primary">
+        Standardised File Structure
+      </p>
       <p class="mt-5">
         Maintain consistent project organization with predefined templates and
         conventions.
@@ -62,7 +75,7 @@ import { TerminalDirectoryBranch } from '#components';
               src="~/assets/svg/tree-2.svg"
               alt="Tree"
               class="h-full w-full"
-            />
+            >
           </div>
           <div class="flex flex-col justify-center space-y-0 lg:mt-0 pb-6">
             <p>
