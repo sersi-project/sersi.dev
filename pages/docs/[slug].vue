@@ -10,14 +10,28 @@ const { data: page } = await useAsyncData(`${slug}`, () => {
 });
 
 useHead({
-  title: page.value?.title,
+  title: page.value?.title + ' — Sersi Docs',
   meta: [
     {
       name: 'description',
       content: page.value?.description,
     },
+    {
+      property: 'og:title',
+      content: page.value?.title + ' — Sersi Docs',
+    },
+    {
+      property: 'og:description',
+      content: page.value?.description,
+    },
+    {
+      property: 'og:image',
+      content: '/social-preview.png',
+    },
   ],
 });
+
+useSeoMeta(page.value?.seo || {});
 
 definePageMeta({
   layout: 'docs',

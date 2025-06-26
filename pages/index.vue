@@ -1,16 +1,5 @@
 <script setup lang="ts">
 import { TerminalDirectoryBranch } from '#components';
-useHead({
-  title: 'Home',
-  meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    {
-      name: 'description',
-      content: 'SERSI is a tool that helps you scaffold your project.',
-    },
-  ],
-});
 </script>
 
 <template>

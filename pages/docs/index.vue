@@ -12,7 +12,7 @@ const { data: docs } = await useAsyncData('docs', () =>
 );
 
 useHead({
-  title: docs.value?.title,
+  title: docs.value?.title + ' — Sersi Docs',
   meta: [
     {
       name: 'description',

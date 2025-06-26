@@ -6,4 +6,13 @@
   </NuxtLayout>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSchemaOrg([
+  defineWebPage({
+    name: 'Sersi',
+  }),
+  defineWebSite({
+    name: 'Sersi',
+  }),
+]);
+</script>

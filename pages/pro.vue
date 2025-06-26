@@ -42,6 +42,47 @@ const plans = ref([
     ],
   },
 ]);
+
+useHead({
+  title: 'Sersi Pro — Your Stack, Your Rules. CLI for Rapid App Scaffolding',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Sersi Pro is a plan for streamlining freelance projects and getting paid faster.',
+    },
+    {
+      property: 'og:title',
+      content:
+        'Sersi Pro — Your Stack, Your Rules. CLI for Rapid App Scaffolding',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Sersi Pro is a plan for streamlining freelance projects and getting paid faster.',
+    },
+    {
+      property: 'og:image',
+      content: '/social-preview-pro.png',
+    },
+    { property: 'og:url', content: 'https://sersi.dev/pro' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:locale', content: 'en_US' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'twitter:title',
+      content:
+        'Sersi Pro — Your Stack, Your Rules. CLI for Rapid App Scaffolding',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Sersi Pro is a plan for streamlining freelance projects and getting paid faster.',
+    },
+    { name: 'twitter:image', content: '/social-preview-pro.png' },
+    { name: 'twitter:url', content: 'https://sersi.dev/pro' },
+  ],
+});
 </script>
 
 <style></style>
